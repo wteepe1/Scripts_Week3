@@ -12,6 +12,33 @@ You can print the value of a variable by using `echo` and prefacing the name of 
 
 `echo $myVariable`
 
+## Math in Bash
+
+In general, bash isn't very good for mathematical operations, but it can be done in several ways. Probably the easiest is to wrap a mathematical expression in _double_ parentheses and precede it with a `$`, since you pretty much always want the _value_ of the mathematical result.
+
+- `echo $(( 2 + 2 ))`
+  - `myNum = $(( 2 + 2 ))`
+- `echo $(( 3 * 6 ))`
+- `echo $(( 20 / 3 ))`
+- `echo $(( 20 % 3 ))`
+
+Compare the output of these last two lines? What's going on?
+
+NOTE: bash can only handle _integers_ and not floating-point numbers (i.e., decimals)
+
+Try this. What happens?
+
+```
+myVar=3
+echo $myVar
+((myVar++))
+echo $myVar
+((myVar++))
+echo $myVar
+```
+
+What does the `++` operator do?
+
 ## Searching Within Files
 
 Sometimes you may want to see if a certain text pattern exists in a file without viewing the entire file. In this case, the `grep` command is incredibly powerful. The basic syntax is
@@ -102,7 +129,15 @@ Let's start by creating your first script - `myScript.sh`
   - `echo "Hello, "$USER"!"`
   - `echo "I'M A SCRIPT AND I WORK!"`
 
-- Command-line Arguments
-    - To access the argument from inside the script, bash reserves the special variables `$1`, `$2`, `$3`, ...
-    - For practice, go back to `myScript.sh` that we created earlier and change `$USER` to `$1`. Now, run it by typing `myScript.sh <YOUR_NAME>`
+To run the script, make sure it's located in your current working directory. Then, type
+
+`./myScript.sh`
+
+Did it run? If not, why not? How can you fix the problem?
+
+_Command-line Arguments_
+
+Scripts can be written to use command-line arguments. To access the arguments from inside the script, bash reserves the special variables `$1`, `$2`, `$3`, ...
+
+For practice, go back to `myScript.sh` that we created earlier and change `$USER` to `$1`. Now, run it by typing `myScript.sh <YOUR_NAME>`
 
