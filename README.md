@@ -6,6 +6,8 @@ You can create a variable and assign it a value using `=`
 
 `myVariable=2`
 
+= -assignment operator
+
 Note that bash is sensitive to spaces! Don't leave any spaces before or after your equals sign when assigning a value to a variable.
 
 You can print the value of a variable by using `echo` and prefacing the name of the variable with `$`
@@ -21,6 +23,7 @@ In general, bash isn't very good for mathematical operations, but it can be done
 - `echo $(( 3 * 6 ))`
 - `echo $(( 20 / 3 ))`
 - `echo $(( 20 % 3 ))`
+    - gives us the remander in division
 
 Compare the output of these last two lines? What's going on?
 
@@ -38,6 +41,7 @@ echo $myVar
 ```
 
 What does the `++` operator do?
+-adds one to the value of the variable (can be used to track how many times youve done something
 
 ## Downloading a file from the command line
 
@@ -48,6 +52,8 @@ While we could copy and paste the contents of this file into a new file using th
 `curl https://raw.githubusercontent.com/IntroToCompBioLSU-Spr20/Scripts2_Week4/master/chiari.summary_statistics.csv`
 
 What happens? How could we save the contents that we're downloading to a file directly?
+  -it displayed the contents of the file, but did not save it
+  -Curl ... > ... saves it as a new file and allows you to name it
 
 ## Searching Within Files
 
