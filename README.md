@@ -39,6 +39,16 @@ echo $myVar
 
 What does the `++` operator do?
 
+## Downloading a file from the command line
+
+An example data file is available here: [chiari.summary_statistics.csv](https://raw.githubusercontent.com/IntroToCompBioLSU-Spr20/Scripts2_Week4/master/chiari.summary_statistics.csv)
+
+While we could copy and paste the contents of this file into a new file using the graphical interface, this approach becomes tedious and difficult with lots of files or large files. Instead, we'd like to be able to download the file contents directly from the command line. To do this, we can use the `curl` command. To start, try executing this command
+
+`curl https://raw.githubusercontent.com/IntroToCompBioLSU-Spr20/Scripts2_Week4/master/chiari.summary_statistics.csv`
+
+What happens? How could we save the contents that we're downloading to a file directly?
+
 ## Searching Within Files
 
 Sometimes you may want to see if a certain text pattern exists in a file without viewing the entire file. In this case, the `grep` command is incredibly powerful. The basic syntax is
@@ -110,6 +120,20 @@ This will print out the first column. To print the third column, we would use
 To print both the first and third columns, we could do this
 
 `awk '{print $1,$3}' test.txt`
+
+## Command line find-and-replace
+
+You'll often need to clean up the contents of data files before doing additional analyses. In this case, we'd like to replace commas with spaces. To do this from the command line, we can use a powerful tool called `sed`. `sed`, which is short for "stream editor", can do many different things, but we'll just use it for simple find-and-replace for now. Try executing this
+
+`sed 's/,/ /g' chiari.summary_statistics.csv`
+
+What do you see? What's different compared to the original contents of the file?
+
+What about when you run this?
+
+`sed -i "_backup" 's/,/ /g' chiari.summary_statistics.csv`
+
+Note that this syntax will stay the same for any find and replace operation that we want to do. The only thing that will change is the text to find and replace (between the slashes).
 
 ## Introduction to Shell Scripts
 
