@@ -82,6 +82,7 @@ will only look for the string `five` if it is at the very beginning of a line.
 will only look for the string `five` if it is at the end of a line.
 
 There are many other possible patterns that can be used with `grep`. If you search online for grep cheat sheets, you can find a lot more information.
+-In grep ".*" is equal to "*"
 
 ## Redirecting Output Streams
 
