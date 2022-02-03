@@ -136,7 +136,7 @@ What about when you run this?
 Note that this syntax will stay the same for any find and replace operation that we want to do. The only thing that will change is the text to find and replace (between the slashes).
 
 ```
-Practice Exercise
+Practice Exercise 1
 
 (1) Create a new variable (e.g., myVar) and assign a numeric value to this variable.
 (2) Print the value of the variable to the screen.
@@ -176,4 +176,83 @@ _Command-line Arguments_
 Scripts can be written to use command-line arguments. To access the arguments from inside the script, bash reserves the special variables `$1`, `$2`, `$3`, ...
 
 For practice, go back to `myScript.sh` that we created earlier and change `$USER` to `$1`. Now, run it by typing `myScript.sh <YOUR_NAME>`
+
+```
+Practice Exercise 2 (Math Script)
+
+(1) Create a new script file. Be sure to add the shebang line and set permissions properly to execute.
+(2) Allow your script to accept two command-line arguments that are numbers.
+(3) Inside the script, multiply the two numbers and then subtract the second number from the product
+(4) Print the result to the screen.
+```
+
+## If...Else
+
+One of the other very important programming concepts is known as "flow control". Basically, this just means doing different things depending on current conditions. There are several ways to accomplish flow control, but probably the most common is the `if...else` statement, which looks like this:
+
+```
+if <TEST_SOMETHING>
+then
+  <DO_THING_1>
+else
+  <DO_THING_2>
+fi
+```
+
+There are lots of different ways to compare values, depending on what type of values you're working with. Here is a page that lists several options: [Bash comparison operators](http://tldp.org/LDP/abs/html/comparison-ops.html). Here's one example:
+
+```
+# Defining value of numeric variable
+a=2
+        
+# if...else to see if value of number is at least 3
+if [ $a -lt 3 ]  # Note: this could also be ((a < 3))
+then
+  echo "$a is less than 3."
+else
+  echo "$a is NOT less than 3."
+fi
+```
+
+Here's an example of combining backticks, command-line arguments, and an if...else statement to write a script that tests if a command-line argument has a certain number of characters.
+
+```
+# Recording length of word provided on command line
+# What's going on with the backticks (``) here?
+myWordLength=`echo -n $1 | wc -m`
+
+# test if word is at least 5 characters
+if [ $myWordLength -lt 5 ]
+then
+  echo "$1 is shorter than 5 characters."
+else
+  echo "$1 is at least 5 characters in length."
+fi
+```
+
+If...else statements can also be nested inside one another.
+
+```
+if [ $myWordLength -le 7 ]
+then
+    if [ $myWordLength -ge 3 ]
+    then
+        echo "Good."
+    else
+        echo "Not good."
+    fi
+else
+    echo "Not good."
+fi
+```
+
+```
+Practice Exercise 3 (If...Else)
+
+(1) Start with the script you wrote above to practice math
+(2) Now add two if...else statements to check that:
+  - The first number is between 3 and 7
+  - The second number is between 10 and 14
+(3) If either of these conditions are not met, have your script print an error message to the screen.
+```
 
