@@ -141,6 +141,7 @@ What about when you run this?
 `sed -i "_backup" 's/,/ /g' chiari.summary_statistics.csv`
 
 Note that this syntax will stay the same for any find and replace operation that we want to do. The only thing that will change is the text to find and replace (between the slashes).
+- will only print the replacement, it will not save it withou
 
 ```
 Practice Exercise 1
@@ -177,12 +178,15 @@ To run the script, make sure it's located in your current working directory. The
 `./myScript.sh`
 
 Did it run? If not, why not? How can you fix the problem?
+-No we dont have permission
 
 _Command-line Arguments_
 
 Scripts can be written to use command-line arguments. To access the arguments from inside the script, bash reserves the special variables `$1`, `$2`, `$3`, ...
 
 For practice, go back to `myScript.sh` that we created earlier and change `$USER` to `$1`. Now, run it by typing `myScript.sh <YOUR_NAME>`
+
+Any line that starts with "#" in the script will just be a comment, it will not run with the command
 
 ```
 Practice Exercise 2 (Math Script)
