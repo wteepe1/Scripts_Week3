@@ -144,6 +144,7 @@ Practice Exercise
 (4) Use history, a pipe, tail, and >> to extract the last myVar lines from your command history and store them in a new file (recentCommands.txt).
 (5) Open your new file with less and scroll through to examine the contents.
 (6) Use sed to do a find-and-replace operation to change all instances of "echo" in the file to "BIOL4800".
+(7) Use grep to extract any lines from the file that start with "ls".
 ```
 
 ## Introduction to Shell Scripts
