@@ -135,6 +135,17 @@ What about when you run this?
 
 Note that this syntax will stay the same for any find and replace operation that we want to do. The only thing that will change is the text to find and replace (between the slashes).
 
+```
+Practice Exercise
+
+(1) Create a new variable (e.g., myVar) and assign a numeric value to this variable.
+(2) Print the value of the variable to the screen.
+(3) Use the increment operator to add 1 to the variable's value.
+(4) Use history, a pipe, tail, and >> to extract the last myVar lines from your command history and store them in a new file (recentCommands.txt).
+(5) Open your new file with less and scroll through to examine the contents.
+(6) Use sed to do a find-and-replace operation to change all instances of "echo" in the file to "BIOL4800".
+```
+
 ## Introduction to Shell Scripts
 
 _What is a shell/bash script?_
